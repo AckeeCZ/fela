@@ -1,0 +1,14 @@
+/node_modules
+/src
+/config
+
+prettier.config.js
+.prettierignore
+yarn.lock
+.eslintignore
+.editorconfig
+babel.config.js
+jest.config.js
+jsconfig.json
+webpack.config.js
+.eslintrc.js
