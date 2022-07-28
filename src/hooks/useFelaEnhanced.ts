@@ -23,7 +23,6 @@ export function useFelaEnhanced<FelaRules, Props, Theme extends any>(
     type PropsWithoutExtend = Omit<Props, 'extend'>;
     type PropsWithTheme = PropsWithoutExtend & { theme: Theme };
 
-    // @ts-ignore
     const combinedRules: TNormalizedMultiRule<PropsWithTheme, FelaRules> = combineMultiRules(...allRules);
 
     const preparedRules = combinedRules(
