@@ -44,7 +44,7 @@ const Component = () => {
 }
 ```
 
-With props
+#### Example with props
 
 ```typescript jsx
 // Paragraph.rules.ts
