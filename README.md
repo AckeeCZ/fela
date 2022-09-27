@@ -1,10 +1,11 @@
  # Ackee fela
  
 Set of commonly used hooks and types
----
+
 ## Installation
-`$ yarn add @ackee/fela`
----
+
+```$ yarn add @ackee/fela```
+
 ## Hooks
 ### `useFelaEnhanced`
  Enhanced memoized `useFela` hook from fela. It accepts fela rules and returns:
@@ -72,8 +73,31 @@ const Paragraph = ({ weight }) => {
 }
 ```
 
-Extending
+## Use with your own theme
 
+### Define `Theme` type
+If you are using TypeScript, you should extend the default `Theme` type with your project's theme type inside a `.d.ts` file.
+```typescript
+// theme.ts
+export const theme = {
+    colors: {
+        red: "#F00",
+        green: "#0F0",
+        blue: "#00F",
+    },
+} as const;
+
+export type Theme = typeof theme;
+
+// index.d.ts 
+import { Theme as ProjectTheme } from "./theme.ts"
+
+declare module "@ackee/fela" {
+  interface Theme extends ProjectTheme {}
+}
+```
+### Extending an existing component 
+To extend rules of an existing component you can define a prop `extend` inside the component and pass it to the `useFelaEnhanced` hook.  
 ```typescript jsx
 // Paragraph.tsx
 import { useFelaEnhanced } from "@ackee/fela";
@@ -125,28 +149,7 @@ const Description = () => {
 }
 ```
 
----
 ## TypesScript
-### `Theme`
-```typescript
-// theme.ts
-export const theme = {
-    colors: {
-        red: "#F00",
-        green: "#0F0",
-        blue: "#00F",
-    },
-} as const;
-
-export type Theme = typeof theme;
-
-// index.d.ts 
-import { Theme as ProjectTheme } from "./theme.ts"
-
-declare module "@ackee/fela" {
-  interface Theme extends ProjectTheme {}
-}
-```
 ### `TRuleWithTheme`
 A generic type that takes rule props as input. It is based on the `TRule` generic type from `fela` but extended with the `theme` prop in the function props.
 ```typescript
@@ -164,7 +167,7 @@ export const container: TRuleWithTheme = ({ theme }) => ({
 })
 ```
 
-### RulesExtend
+### `RulesExtend`
 A generic type that takes type of component's fela rules as input.
 ```typescript jsx
 const felaRules = {
