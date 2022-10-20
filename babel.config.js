@@ -1,11 +1,12 @@
 module.exports = {
     presets: [
+        '@babel/typescript',
         [
-            '@babel/typescript',
+            '@babel/env',
             {
-                onlyRemoveTypeImports: true,
-                allowDeclareFields: true,
+                modules: process.env.BABEL_ENV === 'es' ? false : 'auto',
             },
         ],
+        '@babel/react',
     ],
 };

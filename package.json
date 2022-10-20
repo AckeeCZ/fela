@@ -10,8 +10,8 @@
   "module": "es/index.js",
   "scripts": {
     "prettier": "../node_modules/.bin/prettier --config ./prettier.config.js --write './src/**/*.{js,jsx,ts,tsx}'",
-    "build:lib": "rm -rf ../lib && babel src --out-dir lib  --extensions \".ts,.js,.tsx,.jsx\"",
-    "build:es": "rm -rf ../es && babel src --out-dir es --extensions \".ts,.js,.tsx,.jsx\"",
+    "build:lib": "rm -rf ../lib && BABEL_ENV=lib babel src --out-dir lib  --extensions \".ts,.js,.tsx,.jsx\"",
+    "build:es": "rm -rf ../es && BABEL_ENV=es babel src --out-dir es --extensions \".ts,.js,.tsx,.jsx\"",
     "build:es:types": "tsc -p tsconfig.types.es.json && tsc-alias -p tsconfig.types.es.json",
     "build:lib:types": "tsc -p tsconfig.types.lib.json && tsc-alias -p tsconfig.types.lib.json",
     "build:types": "yarn build:es:types & yarn build:lib:types",
