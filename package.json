@@ -1,9 +1,11 @@
 {
   "name": "@ackee/fela",
-  "private": true,
   "version": "1.0.0",
   "description": "Set of Fela tools we commonly use on our projects",
-  "repository": "https://github.com/AckeeCZ/fela",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AckeeCZ/fela.git"
+  },
   "author": "Martin Foldyna <martin.foldyna@ackee.cz>",
   "license": "MIT",
   "main": "lib/index.js",
@@ -58,5 +60,10 @@
   "files": [
     "es",
     "lib"
-  ]
+  ],
+  "types": "./lib/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/AckeeCZ/fela/issues"
+  },
+  "homepage": "https://github.com/AckeeCZ/fela#readme"
 }
