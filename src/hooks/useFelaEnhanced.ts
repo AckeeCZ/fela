@@ -6,8 +6,10 @@ import type { TNormalizedMultiRule } from 'fela-tools';
 import type { TRule } from 'fela';
 import type { Rules as ReactFelaRules } from 'react-fela';
 
+import type { Theme } from '../types'
+
 // This solution is based on the implementation of [connect binding](https://github.com/robinweser/fela/blob/master/packages/fela-bindings/src/connectFactory.js) from fela
-export function useFelaEnhanced<FelaRules, Props, Theme extends any>(
+export function useFelaEnhanced<FelaRules, Props>(
     rules: ReactFelaRules<Props, FelaRules, Theme>,
     props: Props & { extend?: ReactFelaRules<Omit<Props, 'extend'>, FelaRules, Theme> } = {} as Props,
 ) {
