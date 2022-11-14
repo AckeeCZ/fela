@@ -1,6 +1,6 @@
 {
     "name": "@ackee/fela",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Set of Fela tools we commonly use on our projects",
     "repository": {
         "type": "git",
@@ -36,11 +36,11 @@
         "typescript": "^4.7.3"
     },
     "dependencies": {
+        "@types/react": ">=16.8.0",
         "fela": "^12.1.2",
         "fela-tools": "^12.1.2",
-        "react-fela": "^12.1.2",
         "react": ">=16.8.0",
-        "@types/react": ">=16.8.0"
+        "react-fela": "^12.1.2"
     },
     "husky": {
         "hooks": {
