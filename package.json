@@ -1,6 +1,6 @@
 {
   "name": "@ackee/fela",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Set of Fela tools we commonly use on our projects",
   "repository": {
     "type": "git",
